@@ -1,35 +1,41 @@
 # HCM_KS26_CNTT2_IT108_Session12_Ex02
+# Bài 2: Chuẩn bị hồ sơ dự án trước khi triển khai hệ thống
+
 ##  Phần 1. Phân tích
 
-Hàm VLOOKUP giống như nhân viên kho tìm hồ sơ vận đơn:
+**Mô tả sơ đồ cây cấu trúc Heading cho file SRS.**
 
-| Tham số | Ý nghĩa thực tế |
-|---|---|
-| lookup_value | Mã vận đơn cần tìm |
-| table_array | Bảng hồ sơ chứa mã và giá cước |
-| col_index_num | Cột thứ 2 chứa giá cước |
-| range_lookup | FALSE để tìm chính xác mã |
+- **Heading 1:** là tiêu đề
+- **Heading 2:** sẽ thụt vô 1 khoảng so với Heading 1, là đề mục của phần lớn
+- **Heading 3:** sẽ thụt vô sâu hơn là phần nhỏ của Heading 2
 
 ---
 
 ##  Phần 2. Triển khai
 
-- **Word:** Chuẩn hóa quy trình nhận hàng, kiểm tra, tra cước, phân tuyến và bàn giao.
-- **Excel:** Dùng VLOOKUP kết hợp $ để cố định vùng dữ liệu, áp dụng cho 500 vận đơn.
-- **PowerPoint:** Trình bày tối đa 4 ý chính mỗi slide, dùng tiêu đề thể hiện kết luận.
+**File báo cáo hoàn chỉnh.**
 
-**Công thức Excel:**
+### PowerPoint (Slide giới thiệu nền tảng)
 
-```excel
-=IFERROR(VLOOKUP(TRIM(CLEAN(SUBSTITUTE(A2,CHAR(160)," "))),BangGiaCuoc!$A$2:$B$501,2,FALSE),"KHÔNG TÌM THẤY")
-```
+**Bảng màu (Dark Mode/Contrast Ratio cao):**
+
+- Nền chính: Navy đậm
+- Màu chữ nội dung: màu trắng cho dễ đọc
+
+**Bố cục 3 phần:**
+
+- **Phần 1 (Header):** Logo PTIT-Learning + Tiêu đề chính.
+- **Phần 2 (Nội dung cốt lõi):** 4 tính năng (Lớp học ảo trực tuyến, Học mọi lúc mọi nơi, Theo dõi tiến độ & Báo cáo, Bảo mật & Ổn định cao).
+- **Phần 3 (Thống kê):** Biểu đồ tăng trưởng học viên + Biểu đồ tròn cơ cấu nguồn đăng ký.
 
 ---
 
 ##  Phần 3. Kiểm thử
 
-| Tình huống | Kết quả mong đợi |
-|---|---|
-| Mã hợp lệ | Trả về đúng giá cước |
-| Mã dư khoảng trắng | TRIM xử lý và tìm được giá |
-| Mã chứa ký tự lạ # | Hiện “KHÔNG TÌM THẤY” |
+Nếu lọc sinh viên theo tên nhưng không ra kết quả (dù nhìn thấy tên đó), hãy trình bày cách dùng hàm TRIM để xử lý.
+
+```excel
+=TRIM(B5)
+```
+
+Dùng để xóa khoảng trắng vô hình.
